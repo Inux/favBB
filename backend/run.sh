@@ -1,0 +1,3 @@
+# run the Backend
+
+export FAVBB_POSTGRES_PWD=fPGbG5CzpIVtpToVcEoPXBn0GnZrDyCjk9W22vyPwN0=
