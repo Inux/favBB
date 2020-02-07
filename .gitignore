@@ -1,2 +1,4 @@
 node_modules
 .pw
+frontend/package-lock.json
+frontend/public/js/app.js
