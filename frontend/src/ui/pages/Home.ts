@@ -1,20 +1,10 @@
 import m from 'mithril';
-import Nav from '../navigation/Nav';
-import List from '../components/lists/list';
-
-const state = {
-  counter: 0
-}
+import PageTitle from '../components/layout/pagetitle';
 
 const Home: m.Component = {
-  view: () => m('.page',
-    m(Nav),
-    m('h1', "Home"),
-    m('p', "This is the home page."),
-    m('p', state.counter),
-    m('button', { class: "button is-pulled-right", onclick: () => { state.counter++ } }, "Press!"),
-    m(List)
-  )
+    view: () => m('.page',
+        m(PageTitle, {title: "Home", subtitle: "Wecome to favBB"}),
+    )
 };
 
 export default Home;

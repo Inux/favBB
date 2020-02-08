@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Mithril 2.0 Example</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" id="page-home-link">
+                    Home
+                    <!-- overwritten by Mithril (main.ts) -->
+                </a>
+
+                <a class="navbar-item" id="page-dashboard-link">
+                    Dashboard
+                    <!-- overwritten by Mithril (main.ts) -->
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" id="page-connections-link">
+                        Connections
+                        <!-- overwritten by Mithril (main.ts) -->
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" id="page-search-link">
+                            Search
+                            <!-- overwritten by Mithril (main.ts) -->
+                        </a>
+                        <a class="navbar-item" id="page-mapsearch-link">
+                            Map Search
+                            <!-- overwritten by Mithril (main.ts) -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="app-div">
+        <div class="box">
+            <h1 class="title">Search</h1>
+        </div>
+        <div class="box">
+            <div class="columns">
+                <div class="column is-half">
+                    <p class="panel-heading">From:</p>
+                    <div class="panel-block">
+                        <p class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Search">
+                        <span class="icon is-left">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </span>
+                        </p>
+                    </div>
+                    <nav class="panel">
+                        <a class="panel-block is-active">
+                            <span class="panel-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            bulma
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            marksheet
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            minireset.css
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            jgthms.github.io
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-code-branch" aria-hidden="true"></i>
+                            </span>
+                            daniellowtw/infboard
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-code-branch" aria-hidden="true"></i>
+                            </span>
+                            mojs
+                        </a>
+                    </nav>
+                </div>
+                <div class="column is-half">
+                    <p class="panel-heading">To:</p>
+                    <div class="panel-block">
+                        <p class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Search">
+                        <span class="icon is-left">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </span>
+                        </p>
+                    </div>
+                    <nav class="panel">
+                        <a class="panel-block is-active">
+                            <span class="panel-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            bulma
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            marksheet
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            minireset.css
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            </span>
+                            jgthms.github.io
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-code-branch" aria-hidden="true"></i>
+                            </span>
+                            daniellowtw/infboard
+                        </a>
+                        <a class="panel-block">
+                            <span class="panel-icon">
+                            <i class="fas fa-code-branch" aria-hidden="true"></i>
+                            </span>
+                            mojs
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
