@@ -1,6 +1,6 @@
 import m from 'mithril';
-import Nav from './../navigation/Nav';
-import List from './../components/lists/list'
+import Nav from '../navigation/Nav';
+import List from '../components/lists/list';
 
 const state = {
   counter: 0

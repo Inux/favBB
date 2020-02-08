@@ -5,17 +5,30 @@
             "dom",
             "es2017"
         ],
+        "types": ["jest"],
         "module": "commonjs",
         "esModuleInterop": true,
-        "strict": true,
-        "declaration": true,
-        "noImplicitAny": false,
-        "removeComments": true,
         "moduleResolution": "node",
+        "declaration": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
         "sourceMap": true,
-        "inlineSources": true
+        "inlineSources": true,
+        "strict": true,
+        "noEmit": true,
+        "rootDir": "src",
+        "outDir": "dist",
+        "baseUrl": "src"
     },
-    "files": [
-        "./main.ts"
+    "include": [
+        "src",
+        "**/*.spec.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "public",
+        "dist"
     ]
 }

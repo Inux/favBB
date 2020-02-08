@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "browserify --debug src/main.ts -p [ tsify --project tsconfig.json ] -o public/js/app.js",
     "clean": "rm -f public/js/app.js",
-    "start": "budo src/main.ts:js/app.js -p 8181 --dir public --live=*.{html,js,css} -- --debug -p [ tsify --project tsconfig.json ]"
+    "start": "budo src/main.ts:js/app.js -p 8181 --dir public --live=*.{html,js,css} -- --debug -p [ tsify --project tsconfig.json ]",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",

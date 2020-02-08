@@ -1,5 +1,5 @@
 import m from 'mithril';
-import Nav from './../navigation/Nav';
+import Nav from '../navigation/Nav';
 
 const App: m.Component = {
   view: () => m('.page',
