@@ -1,3 +1,8 @@
 .panel-heading {
     background-color: white;
 }
+
+.panel {
+    margin-left: 0.8em;
+    margin-right: 0.8em;
+}

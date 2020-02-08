@@ -7,12 +7,22 @@ const result = TransportAPI.fetchLocations("Basel").then((result) => { console.l
 console.log(result);
 
 const state = {
-    data: {
+    fromSearch: {
         title: "From:",
         placeholder: "Where to you start?",
         searchItems: [
             {
                 name: "Basel",
+                isActive: false
+            }
+        ]
+    },
+    toSearch: {
+        title: "To:",
+        placeholder: "Where you arrive?",
+        searchItems: [
+            {
+                name: "Luzern",
                 isActive: false
             }
         ]
@@ -25,7 +35,8 @@ const Search: m.Component = {
         m("div", { class: "box" },
             m("div", { class: "columns" },
                 [
-                    m(SearchableList, state.data)
+                    m(SearchableList, state.fromSearch),
+                    m(SearchableList, state.toSearch)
                 ]
             )
         )
