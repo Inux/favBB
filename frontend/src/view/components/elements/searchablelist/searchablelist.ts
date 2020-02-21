@@ -1,20 +1,65 @@
 import m from 'mithril';
-import { SalElement, SalElementAttr } from './salElement';
+import { SalElement } from './salElement';
 
-interface SearchableListAttr {
-    title: string;
-    placeholder: string;
-    searchItems: Array<SalElementAttr>;
+interface IdAndNameProvider {
+    id: number;
+    name: string;
 }
 
-class SearchableList implements m.ClassComponent<SearchableListAttr> {
-    getSalElements(searchItems: Array<SalElementAttr>) {
+interface Attrs {
+    title: string;
+    placeholder: string;
+    searchItems: Array<IdAndNameProvider>;
+    onTextChanged: (newText: string) => any;
+    onItemChanged: (newItem: string) => any;
+}
+
+class SearchableList implements m.ClassComponent<Attrs> {
+    text: string = "";
+    areResultsHidden: boolean = false;
+    onTextChanged: (newText: string) => any = (_: string) => {console.error("onTextChanged not defined!")};
+    onItemChanged: (newItem: string) => any = (_: string) => {console.error("onItemClicked not defined!")};
+
+    updateSearch(ev: any) {
+        ev.stopPropagation();
+
+        if(this.text !== ev.target.value) {
+            this.text = ev.target.value;
+            if(this.text.length > 2) {
+                this.onTextChanged(this.text);
+
+                this.areResultsHidden = false;
+            }
+        }
+    }
+
+    itemClicked(newItem: string) {
+        this.text = newItem;
+        this.onItemChanged(this.text);
+
+        this.areResultsHidden = true;
+    }
+
+    getSalElements(searchItems: Array<IdAndNameProvider>) {
+        let pack = (entry: any) => {
+            entry.onItemClicked = this.itemClicked.bind(this);
+            return entry;
+        }
+
         return searchItems.map((entry) => {
-            return m(SalElement, entry);
+            return m(SalElement, pack(entry));
         })
     }
 
-    view({ attrs }: m.CVnode<SearchableListAttr>) {
+    oninit({ attrs }: m.CVnode<Attrs>) {
+        this.onTextChanged = attrs.onTextChanged;
+        this.onItemChanged = attrs.onItemChanged;
+    }
+
+    view({ attrs }: m.CVnode<Attrs>) {
+        let hidden = "";
+        if(this.areResultsHidden === true) hidden = "is-hidden";
+
         return m("div", { "class": "column is-half" },
             [
                 m("p", { "class": "panel-heading" },
@@ -23,14 +68,14 @@ class SearchableList implements m.ClassComponent<SearchableListAttr> {
                 m("div", { "class": "panel-block" },
                     m("p", { "class": "control has-icons-left" },
                         [
-                            m("input", { "class": "input", "type": "text", "placeholder": attrs.placeholder }),
+                            m("input", { "class": "input", "type": "text", "placeholder": attrs.placeholder, "value": this.text, onkeyup: (ev: any) => {this.updateSearch(ev)} }),
                             m("span", { "class": "icon is-left" },
                                 m("i", { "class": "fas fa-search", "aria-hidden": "true" })
                             )
                         ]
                     )
                 ),
-                m("nav", { "class": "panel" },
+                m("nav", { "class": "panel "+hidden },
                     this.getSalElements(attrs.searchItems)
                 )
             ]
@@ -38,4 +83,4 @@ class SearchableList implements m.ClassComponent<SearchableListAttr> {
     }
 }
 
-export { SearchableList, SearchableListAttr};
+export { SearchableList, Attrs };

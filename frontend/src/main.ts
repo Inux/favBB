@@ -1,11 +1,11 @@
 // App entry point
 
 import m from 'mithril';
-import Home from './ui/pages/Home';
-import Dashboard from './ui/pages/Dashboard';
-import Connections from './ui/pages/Connections';
-import Serach from './ui/pages/Search';
-import MapSearch from './ui/pages/MapSearch';
+import Home from './view/pages/Home';
+import Dashboard from './view/pages/Dashboard';
+import Connections from './view/pages/Connections';
+import Serach from './view/pages/Search';
+import MapSearch from './view/pages/MapSearch';
 
 const pages = [
     {

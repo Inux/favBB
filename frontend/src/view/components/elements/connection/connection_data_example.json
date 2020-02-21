@@ -1,0 +1,507 @@
+{
+  "from": {
+    "station": {
+      "id": "8505000",
+      "name": "Luzern",
+      "score": null,
+      "coordinate": {
+        "type": "WGS84",
+        "x": 47.050174,
+        "y": 8.310185
+      },
+      "distance": null
+    },
+    "arrival": null,
+    "arrivalTimestamp": null,
+    "departure": "2020-02-21T22:54:00+0100",
+    "departureTimestamp": 1582322040,
+    "delay": null,
+    "platform": "7",
+    "prognosis": {
+      "platform": null,
+      "arrival": null,
+      "departure": null,
+      "capacity1st": null,
+      "capacity2nd": null
+    },
+    "realtimeAvailability": null,
+    "location": {
+      "id": "8505000",
+      "name": "Luzern",
+      "score": null,
+      "coordinate": {
+        "type": "WGS84",
+        "x": 47.050174,
+        "y": 8.310185
+      },
+      "distance": null
+    }
+  },
+  "to": {
+    "station": {
+      "id": "8578039",
+      "name": "Olten, Baslerstrasse",
+      "score": null,
+      "coordinate": {
+        "type": "WGS84",
+        "x": 47.351597,
+        "y": 7.902608
+      },
+      "distance": null
+    },
+    "arrival": "2020-02-21T23:38:00+0100",
+    "arrivalTimestamp": 1582324680,
+    "departure": null,
+    "departureTimestamp": null,
+    "delay": null,
+    "platform": "B3",
+    "prognosis": {
+      "platform": null,
+      "arrival": null,
+      "departure": null,
+      "capacity1st": null,
+      "capacity2nd": null
+    },
+    "realtimeAvailability": null,
+    "location": {
+      "id": "8578039",
+      "name": "Olten, Baslerstrasse",
+      "score": null,
+      "coordinate": {
+        "type": "WGS84",
+        "x": 47.351597,
+        "y": 7.902608
+      },
+      "distance": null
+    }
+  },
+  "duration": "00d00:44:00",
+  "transfers": 1,
+  "service": null,
+  "products": [
+    "IR 26",
+    "505"
+  ],
+  "capacity1st": null,
+  "capacity2nd": null,
+  "sections": [
+    {
+      "journey": {
+        "name": "IR 2340",
+        "category": "IR",
+        "subcategory": null,
+        "categoryCode": null,
+        "number": "26",
+        "operator": "SBB",
+        "to": "Basel SBB",
+        "passList": [
+          {
+            "station": {
+              "id": "8505000",
+              "name": "Luzern",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.050174,
+                "y": 8.310185
+              },
+              "distance": null
+            },
+            "arrival": null,
+            "arrivalTimestamp": null,
+            "departure": "2020-02-21T22:54:00+0100",
+            "departureTimestamp": 1582322040,
+            "delay": null,
+            "platform": "7",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8505000",
+              "name": "Luzern",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.050174,
+                "y": 8.310185
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8500218",
+              "name": "Olten",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.351936,
+                "y": 7.907707
+              },
+              "distance": null
+            },
+            "arrival": "2020-02-21T23:28:00+0100",
+            "arrivalTimestamp": 1582324080,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": null,
+            "platform": "10",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8500218",
+              "name": "Olten",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.351936,
+                "y": 7.907707
+              },
+              "distance": null
+            }
+          }
+        ],
+        "capacity1st": null,
+        "capacity2nd": null
+      },
+      "walk": null,
+      "departure": {
+        "station": {
+          "id": "8505000",
+          "name": "Luzern",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.050174,
+            "y": 8.310185
+          },
+          "distance": null
+        },
+        "arrival": null,
+        "arrivalTimestamp": null,
+        "departure": "2020-02-21T22:54:00+0100",
+        "departureTimestamp": 1582322040,
+        "delay": null,
+        "platform": "7",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8505000",
+          "name": "Luzern",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.050174,
+            "y": 8.310185
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8500218",
+          "name": "Olten",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.351936,
+            "y": 7.907707
+          },
+          "distance": null
+        },
+        "arrival": "2020-02-21T23:28:00+0100",
+        "arrivalTimestamp": 1582324080,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": "10",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8500218",
+          "name": "Olten",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.351936,
+            "y": 7.907707
+          },
+          "distance": null
+        }
+      }
+    },
+    {
+      "journey": null,
+      "walk": {
+        "duration": 300
+      },
+      "departure": {
+        "station": {
+          "id": "8500218",
+          "name": "Olten",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.351936,
+            "y": 7.907707
+          },
+          "distance": null
+        },
+        "arrival": "2020-02-21T23:28:00+0100",
+        "arrivalTimestamp": 1582324080,
+        "departure": "2020-02-21T23:28:00+0100",
+        "departureTimestamp": 1582324080,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8500218",
+          "name": "Olten",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.351936,
+            "y": 7.907707
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8572352",
+          "name": "Olten, Bahnhof",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.35193,
+            "y": 7.906926
+          },
+          "distance": null
+        },
+        "arrival": "2020-02-21T23:33:00+0100",
+        "arrivalTimestamp": 1582324380,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8572352",
+          "name": "Olten, Bahnhof",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.35193,
+            "y": 7.906926
+          },
+          "distance": null
+        }
+      }
+    },
+    {
+      "journey": {
+        "name": "B 5204",
+        "category": "B",
+        "subcategory": null,
+        "categoryCode": null,
+        "number": "505",
+        "operator": "BOGG",
+        "to": "Kestenholz, Dörfli",
+        "passList": [
+          {
+            "station": {
+              "id": "8572352",
+              "name": "Olten, Bahnhof",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.35193,
+                "y": 7.906926
+              },
+              "distance": null
+            },
+            "arrival": "2020-02-21T23:33:00+0100",
+            "arrivalTimestamp": 1582324380,
+            "departure": "2020-02-21T23:37:00+0100",
+            "departureTimestamp": 1582324620,
+            "delay": null,
+            "platform": "B3",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8572352",
+              "name": "Olten, Bahnhof",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.35193,
+                "y": 7.906926
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8578039",
+              "name": "Olten, Baslerstrasse",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.351597,
+                "y": 7.902608
+              },
+              "distance": null
+            },
+            "arrival": "2020-02-21T23:38:00+0100",
+            "arrivalTimestamp": 1582324680,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": null,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8578039",
+              "name": "Olten, Baslerstrasse",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.351597,
+                "y": 7.902608
+              },
+              "distance": null
+            }
+          }
+        ],
+        "capacity1st": null,
+        "capacity2nd": null
+      },
+      "walk": null,
+      "departure": {
+        "station": {
+          "id": "8572352",
+          "name": "Olten, Bahnhof",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.35193,
+            "y": 7.906926
+          },
+          "distance": null
+        },
+        "arrival": "2020-02-21T23:33:00+0100",
+        "arrivalTimestamp": 1582324380,
+        "departure": "2020-02-21T23:37:00+0100",
+        "departureTimestamp": 1582324620,
+        "delay": null,
+        "platform": "B3",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8572352",
+          "name": "Olten, Bahnhof",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.35193,
+            "y": 7.906926
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8578039",
+          "name": "Olten, Baslerstrasse",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.351597,
+            "y": 7.902608
+          },
+          "distance": null
+        },
+        "arrival": "2020-02-21T23:38:00+0100",
+        "arrivalTimestamp": 1582324680,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8578039",
+          "name": "Olten, Baslerstrasse",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.351597,
+            "y": 7.902608
+          },
+          "distance": null
+        }
+      }
+    }
+  ]
+}
