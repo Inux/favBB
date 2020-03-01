@@ -1,17 +1,12 @@
 // App entry point
 
 import m from 'mithril';
-import Home from './view/pages/Home';
 import Dashboard from './view/pages/Dashboard';
 import Connections from './view/pages/Connections';
 import Serach from './view/pages/Search';
 import MapSearch from './view/pages/MapSearch';
 
 const pages = [
-    {
-        id: "home",
-        name: "Home"
-    },
     {
         id: "dashboard",
         name: "Dashboard"
@@ -40,7 +35,7 @@ const appDiv = document.getElementById("app-div");
 
 // Set up routing by connecting components to routes
 m.route(appDiv as Element, '/', {
-  '/': Home,
+  '/': Dashboard,
   '/dashboard': Dashboard,
   '/connections': Connections,
   '/search': Serach,
