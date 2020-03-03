@@ -10,3 +10,7 @@
 .no-padding-top {
     padding-top: 0px;
 }
+
+.leaflet-map {
+    height: 50em;
+}

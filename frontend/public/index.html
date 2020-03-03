@@ -9,6 +9,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/app.js" defer></script>
 </head>
@@ -31,20 +35,24 @@
         <div class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item" id="page-dashboard-link">
-                    Dashboard <!-- overwritten by Mithril (main.ts) -->
+                    Dashboard
+                    <!-- overwritten by Mithril (main.ts) -->
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link" id="page-connections-link">
-                        Connections <!-- overwritten by Mithril (main.ts) -->
+                        Connections
+                        <!-- overwritten by Mithril (main.ts) -->
                     </a>
 
                     <div class="navbar-dropdown">
                         <a class="navbar-item" id="page-search-link">
-                            Search <!-- overwritten by Mithril (main.ts) -->
+                            Search
+                            <!-- overwritten by Mithril (main.ts) -->
                         </a>
                         <a class="navbar-item" id="page-mapsearch-link">
-                            Map Search <!-- overwritten by Mithril (main.ts) -->
+                            Map Search
+                            <!-- overwritten by Mithril (main.ts) -->
                         </a>
                     </div>
                 </div>
@@ -54,4 +62,5 @@
     <div class="container" id="app-div">
     </div>
 </body>
+
 </html>

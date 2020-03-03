@@ -25,23 +25,32 @@ class Section implements m.ClassComponent<Attr> {
     //fa-caret-right
     view({ attrs }: m.CVnode<Attr>) {
         let section = attrs.section;
-        let caretRight = {};
-        if(!attrs.isFirst) {
-            caretRight = m("i", {class: "fas fa-caret-right"});
-        }
-        return m("span",
-            [
-                caretRight,
-                "  ",
+
+        let sectionElement = [
+            m("span",
                 m("i", { class: "fas fa-map-marker-alt" }),
-                "  "+section.departure.station.name+"  ",
+                "  " + section.departure.station.name + "  "
+            ),
+            m("span",
                 m("i", { class: "fas fa-clock" }),
-                "  " + ConnHelper.getTime(section.arrival.arrival) + "  ",
+                "  " + ConnHelper.getTime(section.arrival.arrival) + "  "
+            ),
+            m("span",
                 m("i", { class: "fas" + ConnHelper.getPlatformIcon(section.arrival.platform) }),
                 ConnHelper.getPlatformText(section.arrival.platform)
-            ]
+            )
+
+        ];
+
+        if (!attrs.isFirst) {
+            let caretRight = m("span", m("i", { class: "fas fa-caret-right" }), "  ");
+            sectionElement.unshift(caretRight);
+        }
+
+        return m("span",
+            sectionElement
         );
     }
 }
 
-export {Section, Attr};
+export { Section, Attr };

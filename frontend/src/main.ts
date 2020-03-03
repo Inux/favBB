@@ -39,5 +39,5 @@ m.route(appDiv as Element, '/', {
   '/dashboard': Dashboard,
   '/connections': Connections,
   '/search': Serach,
-  '/map': MapSearch
+  '/mapsearch': MapSearch
 });

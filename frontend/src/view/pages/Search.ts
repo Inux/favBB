@@ -3,6 +3,7 @@ import PageTitle from '../components/layout/pagetitle';
 import TransportAPI from '../../controller/services/transportApiService';
 import { SearchableList } from '../components/elements/searchablelist/searchablelist';
 import ConnectionList from '../components/elements/connection/connList';
+import Storage from '../../controller/services/storageService';
 
 const state = {
     search: {
@@ -74,6 +75,11 @@ async function updateSearchItems(searchItems: Array<any>, query: string) {
     );
 }
 
+function onSaveConnection() {
+    console.log(`Save: ${state.search.from} -> ${state.search.to}`)
+    Storage.addConnection({id: 0, from: state.search.from, to: state.search.to});
+}
+
 const Search: m.Component = {
     view: () => m('.page',
         m(PageTitle, { title: "Search", subtitle: "Simply search your connection" }),
@@ -81,12 +87,15 @@ const Search: m.Component = {
             m("div", { class: "columns" },
                 [
                     m(SearchableList, state.fromSearch),
-                    m(SearchableList, state.toSearch)
+                    m(SearchableList, state.toSearch),
                 ]
             )
         ),
         m("div", { class: "box"},
             m(ConnectionList, state.connectionList)
+        ),
+        m("div", { class: "box is-centered" },
+            m("button", { class: "button is-success is-large is-fullwidth is-light", onclick: onSaveConnection }, "Save")
         )
     )
 };

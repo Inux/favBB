@@ -21,7 +21,7 @@ class SectionList implements m.ClassComponent<Attrs> {
     }
 
     view({ attrs }: m.CVnode<Attrs>) {
-        return m("span", { class: "column is-half no-padding-top" },
+        return m("span", { class: "column is-full no-padding-top" },
             this.getListElements(attrs.sections)
         )
     }
