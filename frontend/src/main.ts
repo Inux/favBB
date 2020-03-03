@@ -3,7 +3,7 @@
 import m from 'mithril';
 import Dashboard from './view/pages/Dashboard';
 import Connections from './view/pages/Connections';
-import Serach from './view/pages/Search';
+import Search from './view/pages/Search';
 import MapSearch from './view/pages/MapSearch';
 
 const pages = [
@@ -38,6 +38,6 @@ m.route(appDiv as Element, '/', {
   '/': Dashboard,
   '/dashboard': Dashboard,
   '/connections': Connections,
-  '/search': Serach,
+  '/search': Search,
   '/mapsearch': MapSearch
 });
