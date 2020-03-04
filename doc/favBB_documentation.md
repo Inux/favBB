@@ -1,5 +1,5 @@
 # favBB Dokumentation
-Die Idee hinter FavBB ist es das Suchen nach ÖV Verbindungen zu vereinfachen. Durch Speichern von Favoriten die in einem Dashboard angezeigt werden.
+Die Idee hinter FavBB ist es das Suchen nach ÖV Verbindungen zu vereinfachen. Durch Speichern von Favoriten, die in einem Dashboard angezeigt werden.
 Ausserdem ist es das Ziel ein Tech Stack auszuprobieren der beim
 Arbeitgeber zur Diskussion steht um eine interne Applikation zu
 entwickeln.
@@ -34,16 +34,14 @@ ist der das HTML, JavaScript und CSS ausliefert.
 ### Backend
 Als Backend wird Postgres mit PostgREST verwendet.
 Das Ganze läuft in zwei Docker Container. Zusätzlich dazu
-läuft SwaggerUI um die REST API direkt zu visualisieren.
-Das Ganze wurde ausgiebig lokal getestet und sieht vielversprechend aus. Die Funktionalität von PostgREST überzeugen
-vollumfänglich.
+läuft SwaggerUI um die REST API direkt zu Visualisieren.
+Das Ganze wurde ausgiebig lokal getestet und sieht vielversprechend aus. Die Funktionalität von PostgREST überzeugt vollumfänglich.
 
 #### Datenbank Schema
 Für den Anfang reicht ein simples Datenbankschema.
 Es gibt Benutzer die eine gewisse Anzahl Verbindungen speichern können.
 Nachdem das Schema in der Postgres Datenbank erstellt wurde (via PgAdmin 4), wurde ein Backup Script erstellt, dass von da an
-dafür gebraucht werden konnte, um die Datenbank zu sichern und
-auch wiederherzustellen.
+dafür gebraucht werden konnte, um die Datenbank zu sichern und auch wiederherzustellen.
 
 ### Frontend
 Die Frontend Toolchain besteht hauptsächlich aus NPM, Mithril, Bulma (CSS), TypeScript und browserify.
@@ -59,10 +57,10 @@ m.route(appDiv as Element, '/', {
 ```
 
 ##### Dashboard
-Das Dashboard zeigt pro gespeicherte Verbindung eine List der aktuell verfügbaren ÖV Verbindungen.
+Das Dashboard zeigt pro gespeicherte Verbindung eine Liste der aktuell verfügbaren ÖV Verbindungen zwischen zwei Orten.
 
 ##### Search
-Die Search Seite hat zwei Felder, um Verbindungen zu suchen. Beim Tippen werden dynamisch nach Stationen gesucht. Sobald
+Die Search Seite hat zwei Felder, um Verbindungen zu suchen. Beim Tippen wird dynamisch nach Stationen gesucht. Sobald
 diese ausgewählt sind werden auch schon Verbindungen angezeigt ohne dass diese gespeichert werden müssen.
 
 ##### MapSearch
@@ -71,13 +69,14 @@ auswählen kann und optional Speichern kann.
 Momentan funktioniert das noch nicht.
 
 ##### Components
-Für das UI sind Komponenten notwendig. Für diese Projekt wurden zum Beispiel die "Searchable List" entwickelt.
+Für das UI sind Komponenten notwendig. Für dieses Projekt wurde zum Beispiel die "Searchable List" entwickelt.
 Zusätzlich noch einige kleine Komponenten für die Darstellung von Details wie Verbindungen und der Sektionen (Search Seite).
 
 ###### Searchable List
 Die "Searchable List" ist die grösste Komponente, die entwickelt wurde. Es wurde versucht das UI und die Logik zu trennen.
 Um das zu erreichen bietet die "Searchable List" Callback Funktionen an, die es erlauben den Inhalt anzupassen sobald
-etwas eingetippt wird oder auf die Auswahl eines Elementes zu reagieren.
+etwas eingetippt wird oder auf die Auswahl eines Elementes zu reagieren. Alle Informationen kommen vom Parent Element
+und somit ist die Kopplung zwischen UI und der Logik minimal.
 
 ##### Services
 Für die Anbindung an die TransportAPI und für das Speichern der Verbindungen auf dem Client wurden zwei Services implementiert.
@@ -85,13 +84,29 @@ Für die Anbindung an die TransportAPI und für das Speichern der Verbindungen a
 ###### Transport API
 Die TransportAPI wird von "Opendata Schweiz" zur Verfügung gestellt und beinhaltet sämtliche ÖV Informationen.
 Für diese Projekt sind vor allem die Verbindungen interessant und die möglichen Abfahrts- bzw. Ankunftsorte. Dafür
-reichen zwei Requests, die noch mit Argumenten ausgeführt werden können.
+reichen zwei Requests.
+
+```javascript
+import m from 'mithril';
+
+let query = "Luzern";
+let result = await m.request({
+    method: "GET",
+    url: "http://transport.opendata.ch/v1/locations?query="+query
+});
+
+let from = "Luzern";
+let to = "Basel SBB";
+let result = await m.request({
+    method: "GET",
+    url: `http://transport.opendata.ch/v1/connections?from=${from}&to=${to}`
+});
+```
 
 ###### Storage
-Für das Speichern der Verbindungen auf dem Client wird "localforage" eingesetzt. Das ist eine Library die eine
-Abstraktionen über all die Möglichen Speichermöglichkeiten auf dem Client bietet. Es kann ausgewählt werden wo
-gespeichert werden soll, es kann aber auch ganz automatisch passieren je nach den verfügbaren Möglichkeiten.
-Das Interface ist ziemlich simple. Es besteht aus einem Key / Value Store.
+Für das Speichern der Verbindungen auf dem Client wird "localforage" eingesetzt. Das ist eine Library die Abstraktionen über all die Möglichen Speichermöglichkeiten auf dem Client anbietet. Es kann ausgewählt werden wo
+gespeichert werden soll oder es kann ganz automatisch passieren je nach den verfügbaren Möglichkeiten.
+Das Interface ist ziemlich Einfach und besteht aus einem Key / Value Store.
 
 <div style="page-break-after: always;"></div>
 
@@ -101,9 +116,9 @@ Leider hat am Schluss einiges noch gefehlt für eine voll funktionsfähige Webse
 gemacht und nur ein Client seitiger Storage implementiert. Auch die einzelnen Seiten müssen noch verbessert werden.
 Jedoch wurde mit Mithril eine sehr interessante Bibliothek ausprobiert, die überblickbar, schnell und vielseitig ist.
 Zusätzlich wurde mit der "Searchable List" eine sehr generische Komponente entwickelt die in anderen Projekten wieder
-eingesetzt werden kann, was auch mal aufzeigt was in der Entwicklung von einfachen Komponenten steckt.
+eingesetzt werden kann.
 Durch den Einsatz der TransportAPI konnte zusätzlich eine REST API Anbindung realisiert werden, was eine gute Erfahrung
-war und auch eine gewisse Architektur forderte, um das UI und die REST API Anbindung gut zu trennen.
+war und auch eine gute Architektur forderte, um das UI und die REST API Anbindung gut zu trennen.
 
 ## Reflexion
 Das Projekt war von Anfang an sehr ambitioniert und somit wurde ein gewisses Risiko eingegangen nicht alles zu erreichen
@@ -116,13 +131,12 @@ Postgres Datenbank eine REST API Schnittstelle bekommen soll. Von Anfang an solc
 diskussionswürdig, wenn nicht zwingend eine relationale Datenbank im Hintergrund benötigt wird. Im Frontend ist die
 Frage aber nicht so einfach zu beantworten. Es gibt so viele Frameworks. Im Unterricht wurde mit Angular ein recht
 populäres Framework angeschaut und auch andere wie React und Vue sind sehr populär. Was aber auffällt ist, dass diese
-Frameworks recht gross sind und einen in eine gewisse Abhängigkeit bringt. Um dies zu Umgehen wurde Mithril evaluiert.
+Frameworks recht gross sind und einen in eine gewisse Abhängigkeit bringen. Um dies zu Umgehen wurde Mithril evaluiert.
 Der Vorteil ist, dass der Source Code recht klein ist und somit auch selber verwaltet werden kann, falls das Projekt
-eingestellt wird oder gravierende Änderungen passieren, die nicht eingepflegt werden können. Dass bringt eine gewisse Sicherheit,
-da die Abhängigkeit nicht mehr so gross ist. Als Entwickler sollte man sowieso aufpassen sich nicht zu abhängig von
+eingestellt wird oder gravierende Änderungen passieren die nicht eingepflegt werden können.
+Das bringt eine gewisse Sicherheit, da die Abhängigkeit nicht mehr so gross ist.
+Als Entwickler sollte man sowieso aufpassen sich nicht zu abhängig von
 Frameworks und Libraries zu machen, die man im Notfall nicht selber verwalten kann.
-Im Grossen und Ganzen ist das Projekt eher eine Studie als eine fix fertige Webseite, die aufzeigt, dass der gewählte
-Tech Stack eine realisierbare Alternative ist für zukünftige Projekte.
 
 <div style="page-break-after: always;"></div>
 
