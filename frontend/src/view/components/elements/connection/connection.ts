@@ -26,7 +26,7 @@ class Connection implements m.ClassComponent<Attr> {
             [
                 m("div", { class: "container columns has-text-centered" },
                     [
-                        m("span", { class: "column is-two-fifths has-text-right" },
+                        m("span", { class: "column is-two-fifths has-text-right no-padding-bottom" },
                             [
                                 m("span",
                                     m("i", { class: "fas fa-map-marker-alt" }),
@@ -42,10 +42,10 @@ class Connection implements m.ClassComponent<Attr> {
                                 )
                             ]
                         ),
-                        m("span", { class: "column is-one-fifth" },
+                        m("span", { class: "column is-one-fifth no-padding-bottom" },
                             m("i", { class: "fas fa-arrow-right" })
                         ),
-                        m("span", { class: "column is-two-fifths has-text-left" },
+                        m("span", { class: "column is-two-fifths has-text-left no-padding-bottom" },
                             [
                                 m("span",
                                     m("i", { class: "fas fa-map-marker-alt" }),

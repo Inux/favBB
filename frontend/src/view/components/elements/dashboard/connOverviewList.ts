@@ -23,7 +23,7 @@ class ConnOverviewList implements m.ClassComponent {
     }
 
     view() {
-        return m("nav", { class: "panel" },
+        return m("container", { class: "columns" },
             this.getListElements()
         )
     }

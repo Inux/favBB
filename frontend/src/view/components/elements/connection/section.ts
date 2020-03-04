@@ -27,15 +27,15 @@ class Section implements m.ClassComponent<Attr> {
         let section = attrs.section;
 
         let sectionElement = [
-            m("span",
+            m("span", { class: "is-size-7"},
                 m("i", { class: "fas fa-map-marker-alt" }),
                 "  " + section.departure.station.name + "  "
             ),
-            m("span",
+            m("span", { class: "is-size-7"},
                 m("i", { class: "fas fa-clock" }),
-                "  " + ConnHelper.getTime(section.arrival.arrival) + "  "
+                "  " + ConnHelper.getTime(section.departure.departure) + "  "
             ),
-            m("span",
+            m("span", { class: "is-size-7"},
                 m("i", { class: "fas" + ConnHelper.getPlatformIcon(section.arrival.platform) }),
                 ConnHelper.getPlatformText(section.arrival.platform)
             )
