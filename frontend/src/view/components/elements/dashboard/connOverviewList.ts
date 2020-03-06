@@ -23,7 +23,7 @@ class ConnOverviewList implements m.ClassComponent {
     }
 
     view() {
-        return m("container", { class: "columns" },
+        return m("container", { class: "columns is-multiline" },
             this.getListElements()
         )
     }
